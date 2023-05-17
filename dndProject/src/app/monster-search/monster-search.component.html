@@ -1,0 +1,14 @@
+<input type="number" [(ngModel)]="challengeRating" placeholder="Enter challenge rating">
+<button (click)="searchMonsters()">Search</button>
+
+<div *ngIf="monsters">
+  <ul>
+    <li *ngFor="let monster of monsters" (click)="getMonsterDetails(monster.url)">{{ monster.name }}</li>
+  </ul>
+
+  <div *ngIf="selectedMonster">
+    <h2>{{ selectedMonster.name }}</h2>
+    <!-- Display other monster details here -->
+  </div>
+</div>
+
