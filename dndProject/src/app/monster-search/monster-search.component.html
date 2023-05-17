@@ -5,13 +5,15 @@
   <ul>
     
     <li *ngFor="let monster of monsters" (click)="getMonsterDetails(monster.url)">
+      <img src="https://www.dnd5eapi.co/api/images/monsters/{{monster.index}}.png" height="50" width="50">
       {{ monster.name }}
+      
     </li>
   </ul>
 
   <div *ngIf="selectedMonster">
     <h2>{{ selectedMonster.name }}
-      <img src="https://www.dnd5eapi.co"{{selectedMonster.image}}>
+      <img src="https://www.dnd5eapi.co/api/images/monsters/"{{selectedMonster.index}}>
     </h2>
 
     <!-- Display other monster details here -->
