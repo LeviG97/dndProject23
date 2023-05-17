@@ -11,7 +11,6 @@ export class MonsterSearchComponent {
   challengeRating!: number;
   monsters: any[] | undefined;
   selectedMonster: Monster | undefined;
-  
 
   constructor(private monsterService: MonsterService) {}
 
@@ -25,7 +24,8 @@ export class MonsterSearchComponent {
   getMonsterDetails(url: string) {
     this.monsterService.getMonsterDetails(url)
       .subscribe((monster: Monster) => {
-        this.selectedMonster = monster;
+        this.selectedMonster = monster
+        return monster.type;
       });
   }
 }
