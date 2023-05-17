@@ -8,12 +8,12 @@ import { Monster } from './Monster';
   providedIn: 'root'
 })
 export class MonsterService {
-  private endpoint = 'https://www.dnd5eapi.co/api/monsters';
+  private endpoint = 'https://www.dnd5eapi.co';
 
   constructor(private http: HttpClient) { }
 
-  searchMonsters(challengeRating: number): Observable<any> {
-    const url = `${this.endpoint}?challenge_rating=${challengeRating}`;
+  searchMonsters(challengeRating: number): Observable<Monster> {
+    const url = `${this.endpoint}/api/monsters?challenge_rating=${challengeRating}`;
     return this.http.get<any>(url);
   }
 
