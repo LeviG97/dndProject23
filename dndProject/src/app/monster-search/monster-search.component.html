@@ -1,13 +1,19 @@
 <input type="number" [(ngModel)]="challengeRating" placeholder="Enter challenge rating">
-<button (click)="searchMonsters()">Search</button>
+<button class="btn btn-primary mt-2" (click)="searchMonsters()">Search</button>
 
 <div *ngIf="monsters">
   <ul>
-    <li *ngFor="let monster of monsters" (click)="getMonsterDetails(monster.url)">{{ monster.name }}</li>
+    
+    <li *ngFor="let monster of monsters" (click)="getMonsterDetails(monster.url)">
+      {{ monster.name }}
+      <img src="'https://www.dnd5eapi.co'+ {{monster.image}}" height="20" width="20" alt="Monster Image" />
+    </li>
   </ul>
 
   <div *ngIf="selectedMonster">
-    <h2>{{ selectedMonster.name }}</h2>
+    <h2>{{ selectedMonster.name }}
+    </h2>
+
     <!-- Display other monster details here -->
   </div>
 </div>

@@ -1,0 +1,8 @@
+{
+    "/echo": {
+        "target": "https://www.dnd5eapi.co",
+        "secure": true,
+        "changeOrigin": true,
+        "logLevel": "debug"
+    }
+}
