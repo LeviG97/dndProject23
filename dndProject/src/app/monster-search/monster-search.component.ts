@@ -11,6 +11,7 @@ export class MonsterSearchComponent {
   challengeRating!: number;
   monsters: any[] | undefined;
   selectedMonster: Monster | undefined;
+  
 
   constructor(private monsterService: MonsterService) {}
 
